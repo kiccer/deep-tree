@@ -1,6 +1,7 @@
 import globals from 'globals'
 import pluginJs from '@eslint/js'
-import tsEslint from 'typescript-eslint'
+import tsEslint from '@typescript-eslint/eslint-plugin'
+import tsParser from '@typescript-eslint/parser'
 import standard from 'eslint-config-standard'
 import importPlugin from 'eslint-plugin-import'
 import nPlugin from 'eslint-plugin-n'
@@ -15,10 +16,13 @@ export default [
 
         ignores: [
             'node_modules/**',
-            'lib/**'
+            'lib/**',
+            'types.d.ts'
         ],
 
         languageOptions: {
+            parser: tsParser,
+
             globals: {
                 ...globals.browser,
                 ...globals.node
@@ -28,7 +32,8 @@ export default [
         plugins: {
             n: nPlugin,
             import: importPlugin,
-            promise: promisePlugin
+            promise: promisePlugin,
+            '@typescript-eslint': tsEslint
         },
 
         rules: {
