@@ -1,7 +1,7 @@
-import typescript from '@rollup/plugin-typescript';
-import resolve from '@rollup/plugin-node-resolve';
-import commonjs from '@rollup/plugin-commonjs';
-import { terser } from 'rollup-plugin-terser';
+import typescript from '@rollup/plugin-typescript'
+import resolve from '@rollup/plugin-node-resolve'
+import commonjs from '@rollup/plugin-commonjs'
+import { terser } from 'rollup-plugin-terser'
 
 export default [
     {
@@ -9,23 +9,23 @@ export default [
         output: [
             {
                 file: 'lib/deep.cjs.js',
-                format: 'cjs',
+                format: 'cjs'
             },
             {
                 file: 'lib/deep.esm.js',
-                format: 'esm',
+                format: 'esm'
             },
             {
                 file: 'lib/deep.umd.js',
                 format: 'umd',
-                name: 'Deep',
-            },
+                name: 'Deep'
+            }
         ],
         plugins: [
             resolve(),
             commonjs(),
             typescript({ tsconfig: './tsconfig.json' }),
-            terser(),
-        ],
-    },
-];
+            terser()
+        ]
+    }
+]
