@@ -5,6 +5,7 @@
   "main": "lib/deep.cjs.js",
   "module": "lib/deep.esm.js",
   "browser": "lib/deep.umd.js",
+  "types": "types.d.ts",
   "scripts": {
     "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,6 +13,8 @@
   "author": "kiccer <1072907338@qq.com>",
   "license": "MIT",
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.1",
+    "@rollup/plugin-node-resolve": "^15.3.0",
     "@rollup/plugin-typescript": "^12.1.1",
     "rollup": "^4.27.4",
     "rollup-plugin-terser": "^7.0.2",
