@@ -76,14 +76,15 @@ export function deepEvery (list, callback, children = 'children', parent) {
  * @return  {[Object|Undefined]}            匹配项
  */
 export function deepFind (list, callback, children = 'children', parent) {
-    return list.find(item => callback(item, parent)
-        ? item
-        : deepFind(
-            item[children] ?? [],
-            callback,
-            children,
-            item
-        ))
+    for (const item of list) {
+        if (callback(item, parent)) return item
+
+        if (item[children]) {
+            const result = deepFind(item[children], callback, children, item)
+
+            if (result) return result
+        }
+    }
 }
 
 /**
