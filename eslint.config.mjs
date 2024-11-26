@@ -3,6 +3,7 @@ import pluginJs from '@eslint/js'
 import tsEslint from '@typescript-eslint/eslint-plugin'
 import tsParser from '@typescript-eslint/parser'
 import standard from 'eslint-config-standard'
+import jestPlugin from 'eslint-plugin-jest'
 import importPlugin from 'eslint-plugin-import'
 import nPlugin from 'eslint-plugin-n'
 import promisePlugin from 'eslint-plugin-promise'
@@ -25,7 +26,8 @@ export default [
 
             globals: {
                 ...globals.browser,
-                ...globals.node
+                ...globals.node,
+                ...jestPlugin.environments.globals.globals // 添加 Jest 全局变量
             }
         },
 
@@ -33,12 +35,14 @@ export default [
             n: nPlugin,
             import: importPlugin,
             promise: promisePlugin,
+            jest: jestPlugin,
             '@typescript-eslint': tsEslint
         },
 
         rules: {
             ...pluginJs.configs.recommended.rules,
             ...tsEslint.configs.recommended.rules,
+            ...jestPlugin.configs.recommended.rules,
             ...standard.rules,
             indent: [2, 4],
             'no-unused-vars': 1,
