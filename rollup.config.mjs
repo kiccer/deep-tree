@@ -1,7 +1,8 @@
-import typescript from '@rollup/plugin-typescript'
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
-import { terser } from 'rollup-plugin-terser'
+import babel from '@rollup/plugin-babel'
+import typescript from '@rollup/plugin-typescript'
+import terser from '@rollup/plugin-terser'
 
 export default [
     {
@@ -24,6 +25,10 @@ export default [
         plugins: [
             resolve(),
             commonjs(),
+            babel({
+                exclude: 'node_modules/**', // 只编译我们的源代码
+                babelHelpers: 'bundled'
+            }),
             typescript({ tsconfig: './tsconfig.json' }),
             terser()
         ]
