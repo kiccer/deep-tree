@@ -1,4 +1,4 @@
-import { deepEvery } from '../src/deep'
+import { deepEvery } from '../src/deep-tree'
 import 'jest-extended'
 
 test('deepEvery - 常规测试', () => {

@@ -1,4 +1,4 @@
-import { deepEach } from '../src/deep'
+import { deepEach } from '../src/deep-tree'
 import 'jest-extended'
 
 test('deepEach - 常规测试', () => {

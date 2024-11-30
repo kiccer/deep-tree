@@ -1,20 +1,32 @@
 {
   "name": "deep-tree",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "description": "提供一系列对树状数组进行深度遍历操作的方法。",
-  "main": "lib/deep.cjs.js",
-  "module": "lib/deep.esm.js",
-  "browser": "lib/deep.umd.js",
+  "main": "lib/deep-tree.cjs.js",
+  "module": "lib/deep-tree.esm.js",
+  "browser": "lib/deep-tree.umd.js",
   "types": "types.d.ts",
   "scripts": {
     "build": "rollup -c",
     "build:watch": "rollup -c --watch",
-    "lint": "eslint .",
+    "lint": "eslint . --fix",
     "test": "jest --verbose --coverage",
-    "prepare": "husky"
-  },
+    "prepare": "husky",
+    "prepublishOnly": "npm run lint && npm run test && npm run build",
+    "publish": "npm publish",
+    "publish:alpha": "npm publish --tag alpha",
+    "publish:beta": "npm publish --tag beta"
+},
   "author": "kiccer <1072907338@qq.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kiccer/deep-tree.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kiccer/deep-tree/issues"
+  },
+  "homepage": "https://github.com/kiccer/deep-tree",
   "devDependencies": {
     "@babel/core": "^7.26.0",
     "@babel/preset-env": "^7.26.0",

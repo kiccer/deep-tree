@@ -1,4 +1,4 @@
-import { deepMap } from '../src/deep'
+import { deepMap } from '../src/deep-tree'
 import 'jest-extended'
 
 test('deepMap - 常规测试', () => {

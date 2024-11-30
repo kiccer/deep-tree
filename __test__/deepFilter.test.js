@@ -1,4 +1,4 @@
-import { deepFilter } from '../src/deep'
+import { deepFilter } from '../src/deep-tree'
 import 'jest-extended'
 
 test('deepFilter - 常规测试', () => {

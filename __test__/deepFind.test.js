@@ -1,4 +1,4 @@
-import { deepFind } from '../src/deep'
+import { deepFind } from '../src/deep-tree'
 import 'jest-extended'
 
 test('deepFind - 常规测试', () => {
