@@ -1,5 +1,5 @@
 {
-  "name": "deep.js",
+  "name": "deep-tree",
   "version": "0.0.1",
   "description": "提供一系列对树状数组进行深度遍历操作的方法。",
   "main": "lib/deep.cjs.js",

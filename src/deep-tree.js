@@ -41,7 +41,7 @@ export function deepSome (list, callback, children = 'children', parent) {
 
         return bool || (
             Array.isArray(item[children]) &&
-      deepSome(item[children], callback, children, item)
+            deepSome(item[children], callback, children, item)
         )
     })
 }
@@ -61,7 +61,7 @@ export function deepEvery (list, callback, children = 'children', parent) {
 
         return bool && (
             !Array.isArray(item[children]) ||
-      deepEvery(item[children], callback, children, item)
+            deepEvery(item[children], callback, children, item)
         )
     })
 }

@@ -6,20 +6,20 @@ import terser from '@rollup/plugin-terser'
 
 export default [
     {
-        input: 'src/deep.js',
+        input: 'src/deep-tree.js',
         output: [
             {
-                file: 'lib/deep.cjs.js',
+                file: 'lib/deep-tree.cjs.js',
                 format: 'cjs'
             },
             {
-                file: 'lib/deep.esm.js',
+                file: 'lib/deep-tree.esm.js',
                 format: 'esm'
             },
             {
-                file: 'lib/deep.umd.js',
+                file: 'lib/deep-tree.umd.js',
                 format: 'umd',
-                name: 'Deep'
+                name: 'DeepTree'
             }
         ],
         plugins: [
