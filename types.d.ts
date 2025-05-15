@@ -4,42 +4,42 @@ export type TreeNode = {
   [key: string]: any;
 };
 
-export type DeepFilter = (
+export type deepFilter = (
   list: TreeNode[],
   callback: (item: TreeNode, parent?: TreeNode) => boolean,
   children?: string,
   parent?: TreeNode
 ) => TreeNode[];
 
-export type DeepSome = (
+export type deepSome = (
   list: TreeNode[],
   callback: (item: TreeNode, parent?: TreeNode) => boolean,
   children?: string,
   parent?: TreeNode
 ) => boolean;
 
-export type DeepEvery = (
+export type deepEvery = (
   list: TreeNode[],
   callback: (item: TreeNode, parent?: TreeNode) => boolean,
   children?: string,
   parent?: TreeNode
 ) => boolean;
 
-export type DeepFind = (
+export type deepFind = (
   list: TreeNode[],
   callback: (item: TreeNode, parent?: TreeNode) => boolean,
   children?: string,
   parent?: TreeNode
 ) => TreeNode | undefined;
 
-export type DeepEach = (
+export type deepEach = (
   list: TreeNode[],
   callback: (item: TreeNode, parent?: TreeNode) => void,
   children?: string,
   parent?: TreeNode
 ) => void;
 
-export type DeepMap = (
+export type deepMap = (
   list: TreeNode[],
   callback: (item: TreeNode, parent?: TreeNode) => TreeNode,
   children?: string,
